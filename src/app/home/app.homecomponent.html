@@ -1,0 +1,49 @@
+
+
+
+
+<style>
+    .navbar{
+      background-color: darkcyan;
+      padding:10px;
+    }
+    li a{
+      color:white;
+      font-size: 30;
+    }
+    li a:hover{
+      background-color: red;
+     
+    }
+    .navbar-brand{
+      color:white;
+      font-size-adjust: 45px;;
+    }
+    
+    </style>
+     
+    
+      <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <div class="navbar-brand">DEMO</div>
+              </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                   
+                        <li><a [routerLink]="['/home']">HOME</a></li>
+                        <li>  <a [routerLink]="['customer']">CUSTOMER</a></li>
+                        <li> <a [routerLink]="['supplier']">SUPPLIER</a></li>      
+                </ul>
+
+             <router-outlet></router-outlet>
+
+              </div>
+            </div>
+          </nav>
+          
