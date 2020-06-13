@@ -3,13 +3,13 @@ import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import { supplierComponent } from './supplier/app.suppliercomponent';
 import { homeComponent } from './home/app.homecomponent';
-import { customerComponent } from './customer/app.component';
+import { employeeComponent } from './employee/app.employeecomponent';
 import{RouterModule} from '@angular/router'
 import { mainrouting } from './routing/app.routing';
 import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
-    supplierComponent,homeComponent,customerComponent
+    supplierComponent,homeComponent,employeeComponent
   ],
   imports: [
     RouterModule.forRoot(mainrouting),

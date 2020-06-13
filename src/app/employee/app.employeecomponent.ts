@@ -1,19 +1,20 @@
 import { Component } from '@angular/core';
 import{HttpClient} from '@angular/common/http';
-import{EmployeeModel} from './app.model';
+import{EmployeeModel} from './app.employeemodel';
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  templateUrl: './app.employeecomponent.html',
 
 })
 
 
-export class customerComponent {
- Employeeobj: EmployeeModel= null;
-  
+export class employeeComponent {
+  Employeeobj: EmployeeModel= null;
+  Employeeobjs:Array<EmployeeModel>=new Array<EmployeeModel>();
+
   title = 'myfirstapp';
  constructor(public httpobj:HttpClient){
-   this.Employeeobj =new EmployeeModel() ;
+   this.Employeeobj =new EmployeeModel(); //single record
  }
   Submit(){
    //http post submit 
@@ -23,7 +24,8 @@ export class customerComponent {
  res=>Error(res));
   }
   Success(res){
-
+this.Employeeobjs= res;//set the collection
+this.Employeeobj =new EmployeeModel();   //clear ui
   }
   Error(res){
 
