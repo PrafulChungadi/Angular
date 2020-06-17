@@ -1,21 +1,29 @@
 
-  <table>
+ <form [formGroup]="Employeeobj.formEmployeeGroup">
+ <table>
       <tr>
           <td> Employee Name :-</td>
-          <td><input type="text" [(ngModel)]="Employeeobj.name" value="" /></td>
-      </tr>
+          <td><input formControlName="namecontrol" type="text" [(ngModel)]="Employeeobj.name" value=""  placeholder="Enter Name"></td>
+          <div *ngIf="Employeeobj.formEmployeeGroup.dirty"[hidden]="!(Employeeobj.formEmployeeGroup.controls['namecontrol'].hasError('required'))">Employee Name is required</div>  
+        </tr>
       <tr>
           <td> Employee ID     :-</td>
-          <td>  <input type="number" [(ngModel)]="Employeeobj.id" value="" /></td>
-      </tr>
+          <td>  <input formControlName="idcontrol" type="number" [(ngModel)]="Employeeobj.id" value="" placeholder="Enter ID"></td>
+          <div *ngIf="Employeeobj.formEmployeeGroup.dirty" [hidden]="!(Employeeobj.formEmployeeGroup.controls['idcontrol'].hasError('required'))">Employee ID is required</div>
+         <div *ngIf="Employeeobj.formEmployeeGroup.dirty"[hidden]="!(Employeeobj.formEmployeeGroup.controls['idcontrol'].hasError('pattern'))">Employee ID format is no proper</div> 
+          
+        </tr>
       <tr>
-          <td><input id="Button1" type="button" (click)="Submit()" value="Add Submit" /></td>
+          <td><input  id="Button1" [disabled]="!(Employeeobj.formEmployeeGroup.valid)" type="button" (click)="Submit()" value="Add Submit" /></td>
       </tr>
 
       <tr>
          
       </tr>
   </table>
+ </form>
+  
+
       <table border="4" >
           <tr>
               <td>EmployeeName</td>

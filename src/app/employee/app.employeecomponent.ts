@@ -16,6 +16,7 @@ export class employeeComponent {
  constructor(public httpobj:HttpClient){
    this.Employeeobj =new EmployeeModel(); //single record
  }
+ 
   Submit(){
    //http post submit 
  
@@ -28,6 +29,6 @@ this.Employeeobjs= res;//set the collection
 this.Employeeobj =new EmployeeModel();   //clear ui
   }
   Error(res){
-
+alert(res);
   }
 }

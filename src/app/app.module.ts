@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { supplierComponent } from './supplier/app.suppliercomponent';
 import { homeComponent } from './home/app.homecomponent';
 import { employeeComponent } from './employee/app.employeecomponent';
@@ -12,7 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
     supplierComponent,homeComponent,employeeComponent
   ],
   imports: [
-    RouterModule.forRoot(mainrouting),
+    RouterModule.forRoot(mainrouting),ReactiveFormsModule,
     FormsModule,
     BrowserModule,
    HttpClientModule
