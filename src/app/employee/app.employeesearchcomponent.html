@@ -1,0 +1,26 @@
+
+    <table>
+         <tr>
+             <td> Enter Employee Name :-</td>
+             <td><input  type="text"  [(ngModel)]="employeeName" value=""  placeholder="Enter Name"></td>
+             <td><input  type="button" (click)="search()" value="Search" /></td>
+
+            </tr>
+       
+     </table>
+   
+     
+   
+         <table border="4" >
+             <tr>
+                 <td>EmployeeName</td>
+                 <td>EmployeeID</td>
+             </tr>
+             <tr   *ngFor="let c of employeeModels" >
+               <td>{{c.name}}</td>
+               <td>{{c.id}}</td>
+           </tr>
+         
+         </table>
+         
+   

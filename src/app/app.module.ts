@@ -7,9 +7,10 @@ import { employeeComponent } from './employee/app.employeecomponent';
 import{RouterModule} from '@angular/router'
 import { mainrouting } from './routing/app.routing';
 import { HttpClientModule } from '@angular/common/http';
+import { employeesearchcomponent } from './employee/app.employeesearchcomponent';
 @NgModule({
   declarations: [
-    supplierComponent,homeComponent,employeeComponent
+    supplierComponent,homeComponent,employeeComponent,employeesearchcomponent
   ],
   imports: [
     RouterModule.forRoot(mainrouting),ReactiveFormsModule,
