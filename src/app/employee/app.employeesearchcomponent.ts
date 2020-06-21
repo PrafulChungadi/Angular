@@ -12,6 +12,7 @@ import{HttpClient} from '@angular/common/http';
   
   export class employeesearchcomponent {
   employeeName:string="";
+  employeeobj: EmployeeModel= null;
   employeeModels:Array<EmployeeModel> =new Array<EmployeeModel>();
 
     constructor(public http:HttpClient){
@@ -19,12 +20,12 @@ import{HttpClient} from '@angular/common/http';
     }
 
     search(){
-        this.http.get("https://localhost:44304/Employee/Search?employeeName="+ this.employeeName)
+        this.http.get("https://localhost:44304/api/employe?employeeName="+ this.employeeName)
         .subscribe(res=>this.success(res),res=>this.error(res));
     }
     success(res){
         this.employeeModels=res;
-
+      
     }
     error(res){
 

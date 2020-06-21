@@ -26,7 +26,7 @@ empdto.id = this.Employeeobj.id;
    //http post submit 
  
  //Take this Employeeobj and make http call
- this.httpobj.post("https://localhost:44304/Employee/Submit",empdto).subscribe(res=>this.Success(res),
+ this.httpobj.post("https://localhost:44304/api/employe",empdto).subscribe(res=>this.Success(res),
  res=>Error(res));
   }
   Success(res){
