@@ -10,7 +10,7 @@
           <td> Employee ID     :-</td>
           <td>  <input formControlName="idcontrol" type="number" [(ngModel)]="Employeeobj.id" value="" placeholder="Enter ID"></td>
           <div *ngIf="Employeeobj.formEmployeeGroup.dirty" [hidden]="!(Employeeobj.formEmployeeGroup.controls['idcontrol'].hasError('required'))">Employee ID is required</div>
-         <div *ngIf="Employeeobj.formEmployeeGroup.dirty"[hidden]="!(Employeeobj.formEmployeeGroup.controls['idcontrol'].hasError('pattern'))">Employee ID format is no proper</div> 
+         <div *ngIf="Employeeobj.formEmployeeGroup.dirty"[hidden]="!(Employeeobj.formEmployeeGroup.controls['idcontrol'].hasError('pattern'))">Employee ID is not proper format </div> 
           
         </tr>
       <tr>
@@ -24,12 +24,12 @@
  </form>
   
 
-      <table border="4" >
+      <table border="4">
           <tr>
               <td>EmployeeName</td>
               <td>EmployeeID</td>
           </tr>
-          <tr   *ngFor="let c of Employeeobjs" >
+          <tr   *ngFor="let c of Employeeobjs">
             <td>{{c.name}}</td>
             <td>{{c.id}}</td>
         </tr>

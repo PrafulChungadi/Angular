@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import{HttpClient} from '@angular/common/http';
 import{EmployeeModel} from './app.employeemodel';
-import { employeesearchcomponent } from './app.employeesearchcomponent';
+import { employeesearchcomponent } from '../EmployeeSearch/app.employeesearchcomponent';
 @Component({
   selector: 'app-root',
   templateUrl: './app.employeecomponent.html',

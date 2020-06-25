@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { EmployeeModel } from './app.employeemodel';
+import { EmployeeModel } from '../employee/app.employeemodel';
 import{HttpClient} from '@angular/common/http';
 
 

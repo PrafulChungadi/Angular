@@ -1,16 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { supplierComponent } from './supplier/app.suppliercomponent';
-import { homeComponent } from './home/app.homecomponent';
-import { employeeComponent } from './employee/app.employeecomponent';
+import { homeComponent } from './app.homecomponent';
 import{RouterModule} from '@angular/router'
-import { mainrouting } from './routing/app.routing';
+import { mainrouting } from './app.homerouting';
 import { HttpClientModule } from '@angular/common/http';
-import { employeesearchcomponent } from './employee/app.employeesearchcomponent';
+
 @NgModule({
   declarations: [
-    supplierComponent,homeComponent,employeeComponent,employeesearchcomponent
+    homeComponent,
   ],
   imports: [
     RouterModule.forRoot(mainrouting),ReactiveFormsModule,
@@ -21,4 +19,4 @@ import { employeesearchcomponent } from './employee/app.employeesearchcomponent'
   providers: [],
   bootstrap: [homeComponent]
 })
-export class AppModule { }
+export class homeModule { }

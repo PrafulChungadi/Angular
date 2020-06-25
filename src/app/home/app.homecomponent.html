@@ -1,7 +1,4 @@
 
-
-
-
 <style>
     .navbar{
       background-color: darkcyan;
@@ -31,19 +28,17 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-                <div class="navbar-brand">DEMO</div>
+                <div class="navbar-brand">Employee Management</div>
               </div>
               <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
                    
                         <li><a [routerLink]="['/home']">HOME</a></li>
-                        <li>  <a [routerLink]="['employee']">EMPLOYEE</a></li>
-                        <li> <a [routerLink]="['supplier']">SUPPLIER</a></li>
-                        <li><a [routerLink] ="['serach']">Search Employee</a></li>     
+                        <li>  <a [routerLink]="['/employee/New']"> ADD EMPLOYEE</a></li>                   
+                        <li><a [routerLink] ="['/serach/Search']">SEARCH EMPLOYEE </a></li>     
                 </ul>
 
-             <router-outlet></router-outlet>
-
+             <router-outlet></router-outlet> 
               </div>
             </div>
           </nav>
