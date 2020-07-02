@@ -6,9 +6,11 @@ import{RouterModule} from '@angular/router'
 import { mainrouting } from './app.homerouting';
 import { HttpClientModule } from '@angular/common/http';
 
+import { MasterPageComponent } from './app.MasterPagecomponent';
+
 @NgModule({
   declarations: [
-    homeComponent,
+    homeComponent,MasterPageComponent,
   ],
   imports: [
     RouterModule.forRoot(mainrouting),ReactiveFormsModule,
@@ -17,6 +19,6 @@ import { HttpClientModule } from '@angular/common/http';
    HttpClientModule
   ],
   providers: [],
-  bootstrap: [homeComponent]
+  bootstrap: [MasterPageComponent]
 })
 export class homeModule { }
