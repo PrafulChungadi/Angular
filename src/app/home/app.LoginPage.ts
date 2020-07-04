@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {User} from './app.LoginPageModel';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,8 +12,10 @@ import {User} from './app.LoginPageModel';
 
 
 export class EmployeeLoginePageComponent {
- UserObj:User=new User();
- constructor(public http:HttpClient){
+ //UserObj:User=new User();
+ constructor(public http:HttpClient,
+  public UserObj:User,
+  public routing:Router){
 
  }
  Login(){
@@ -21,10 +24,14 @@ export class EmployeeLoginePageComponent {
   this.UserObj).subscribe(res=>this.Success(res),res=>this.Error(res));
  }
  Success(res){
-  alert(res.token);
+   //alert(res.token);
+   this.UserObj.token =res.token;
+   this.routing.navigate(["home"])
+  
  }
 Error(res){
 
 }
 
 }
+ 

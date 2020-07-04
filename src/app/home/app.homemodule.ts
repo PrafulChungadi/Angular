@@ -7,10 +7,13 @@ import { mainrouting } from './app.homerouting';
 import { HttpClientModule } from '@angular/common/http';
 
 import { MasterPageComponent } from './app.MasterPagecomponent';
+import { User } from './app.LoginPageModel';
+import { SecurityLogic } from '../Utilities/Utility.AuthGuard';
+import { EmployeeLoginePageComponent } from './app.LoginPage';
 
 @NgModule({
   declarations: [
-    homeComponent,MasterPageComponent,
+    homeComponent,MasterPageComponent,EmployeeLoginePageComponent,
   ],
   imports: [
     RouterModule.forRoot(mainrouting),ReactiveFormsModule,
@@ -18,7 +21,7 @@ import { MasterPageComponent } from './app.MasterPagecomponent';
     BrowserModule,
    HttpClientModule
   ],
-  providers: [],
+  providers: [User,SecurityLogic],
   bootstrap: [MasterPageComponent]
 })
 export class homeModule { }
