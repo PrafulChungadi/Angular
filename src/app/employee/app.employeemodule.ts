@@ -2,13 +2,14 @@
 import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import{RouterModule} from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { employeeComponent } from './app.employeecomponent';
 import { employeerouting } from './app.employeerouting';
 import { CommonModule } from '@angular/common';
+import { MyJwtInterceptor } from '../Utilities/Utility.Interceptor';
 @NgModule({
   declarations: [
-  employeeComponent
+  employeeComponent,
   ],
   imports: [
     RouterModule.forChild(employeerouting),ReactiveFormsModule,
@@ -16,7 +17,7 @@ import { CommonModule } from '@angular/common';
    CommonModule,
    HttpClientModule
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: MyJwtInterceptor, multi: true}],
   bootstrap: [employeeComponent]
 })
 export class employeeModule {  }

@@ -2,10 +2,11 @@
 import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import{RouterModule} from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS,  } from '@angular/common/http';
 import { employeesearchcomponent } from './app.employeesearchcomponent';
 import { employeesearchrouting } from './app.employeesearchrouting';
 import { CommonModule } from '@angular/common';
+import { MyJwtInterceptor } from '../Utilities/Utility.Interceptor';
 
 @NgModule({
   declarations: [ 
@@ -17,7 +18,7 @@ import { CommonModule } from '@angular/common';
    CommonModule,
    HttpClientModule
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: MyJwtInterceptor, multi: true}],
   bootstrap: [employeesearchcomponent]
 })
 export class searchModule { }
