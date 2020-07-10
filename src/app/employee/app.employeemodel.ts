@@ -8,6 +8,7 @@ export class EmployeeModel
 {
     name :string = "";
      id :number ;
+     address: string="";
 
      formEmployeeGroup:FormGroup= null;
      constructor(){
@@ -27,6 +28,8 @@ export class EmployeeModel
          validationcollection.push(Validators.pattern("^[0-9]{4,4}$"))
           this.formEmployeeGroup.addControl("idcontrol",new FormControl('',Validators.compose(validationcollection)));
 
+          this.formEmployeeGroup.addControl("addresscontrol",
+         new FormControl('',Validators.required));   
          }
 
 }

@@ -13,6 +13,15 @@
          <div *ngIf="Employeeobj.formEmployeeGroup.dirty"[hidden]="!(Employeeobj.formEmployeeGroup.controls['idcontrol'].hasError('pattern'))">Employee ID is not proper format </div> 
           
         </tr>
+
+        <tr>
+          <td> Address :-</td>
+          <td>  <input formControlName="addresscontrol" type="text" [(ngModel)]="Employeeobj.address" value="" name="address" placeholder=""></td>
+          <div *ngIf="Employeeobj.formEmployeeGroup.dirty" [hidden]="!(Employeeobj.formEmployeeGroup.controls['addresscontrol'].hasError('required'))">Address ID is required</div>
+          
+          
+        </tr>
+
       <tr>
           <td><input  id="Button1" [disabled]="!(Employeeobj.formEmployeeGroup.valid)" type="button" (click)="Submit()" value="Add Submit" /></td>
       </tr>
@@ -22,16 +31,20 @@
       </tr>
   </table>
  </form>
+
+ 
   
 
       <table border="4">
           <tr>
-              <td>EmployeeName</td>
-              <td>EmployeeID</td>
+            <td>EmployeeID</td> 
+            <td>EmployeeName</td>
+            <td>Address</td>
           </tr>
           <tr   *ngFor="let c of Employeeobjs">
-            <td>{{c.name}}</td>
             <td>{{c.id}}</td>
+            <td>{{c.name}}</td>
+          <td>{{c.address}}</td>
         </tr>
       
       </table>

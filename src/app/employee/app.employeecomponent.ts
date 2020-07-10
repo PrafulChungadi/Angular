@@ -22,6 +22,7 @@ export class employeeComponent {
 var empdto :any ={}; //data transfer object
 empdto.name =this.Employeeobj.name;
 empdto.id = this.Employeeobj.id;
+empdto.address =this.Employeeobj.address;
 
    //http post submit 
  
