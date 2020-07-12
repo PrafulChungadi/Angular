@@ -5,12 +5,15 @@ import { homeComponent } from './app.homecomponent';
 import{RouterModule} from '@angular/router'
 import { mainrouting } from './app.homerouting';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {MatSliderModule} from '@angular/material/slider';
 
 import { MasterPageComponent } from './app.MasterPagecomponent';
 import { User } from './app.LoginPageModel';
 import { SecurityLogic } from '../Utilities/Utility.AuthGuard';
 import { EmployeeLoginePageComponent } from './app.LoginPage';
 import { MyJwtInterceptor } from '../Utilities/Utility.Interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +23,8 @@ import { MyJwtInterceptor } from '../Utilities/Utility.Interceptor';
     RouterModule.forRoot(mainrouting),ReactiveFormsModule,
     FormsModule,
     BrowserModule,
-   HttpClientModule
+   HttpClientModule,
+   BrowserAnimationsModule,MatSliderModule,
   ],
   providers: [User,SecurityLogic,
     {provide: HTTP_INTERCEPTORS, useClass: MyJwtInterceptor, multi: true}],

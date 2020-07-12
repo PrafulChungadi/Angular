@@ -6,10 +6,13 @@ FormBuilder
 } from '@angular/forms';  
 export class EmployeeModel
 {
+    id :number ;
     name :string = "";
-     id :number ;
-     address: string="";
-
+     
+    //  address: string="";
+    employeeAddresses:Array<EmployeeAddress>= new Array<EmployeeAddress>();
+   
+    //step 1
      formEmployeeGroup:FormGroup= null;
      constructor(){
          //tree structor
@@ -32,4 +35,9 @@ export class EmployeeModel
          new FormControl('',Validators.required));   
          }
 
+}
+
+export class EmployeeAddress{
+    id :number ;
+    address: string="";
 }

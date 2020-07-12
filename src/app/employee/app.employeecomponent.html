@@ -16,21 +16,60 @@
 
         <tr>
           <td> Address :-</td>
-          <td>  <input formControlName="addresscontrol" type="text" [(ngModel)]="Employeeobj.address" value="" name="address" placeholder=""></td>
+          <td>  <input formControlName="addresscontrol" type="text" [(ngModel)]="employeeAddress.address" value="" name="address" placeholder=""></td>
           <div *ngIf="Employeeobj.formEmployeeGroup.dirty" [hidden]="!(Employeeobj.formEmployeeGroup.controls['addresscontrol'].hasError('required'))">Address ID is required</div>
-          
+          <td><input  id="Button1"  type="button" (click)="AddAddress()" value="Add Address" /></td>
           
         </tr>
 
       <tr>
-          <td><input  id="Button1" [disabled]="!(Employeeobj.formEmployeeGroup.valid)" type="button" (click)="Submit()" value="Add Submit" /></td>
-      </tr>
+          <td><input  id="Button1"   type="button" (click)="Submit()" value="Add Submit" /></td>
+      </tr><!--- [disabled]="!(Employeeobj.formEmployeeGroup.valid)"-->
 
       <tr>
          
       </tr>
   </table>
  </form>
+
+
+
+ <table border="4">
+  <tr>
+    <td>Address</td>
+  </tr>
+  <tr   *ngFor="let address of Employeeobj.employeeAddresses">
+  
+  <td>{{address.address}}</td>
+</tr>
+
+</table> 
+
+ 
+
+<!-- <mat-table [dataSource]="Employeeobjs" class="mat-elevation-z8">
+    EmployeeID Column
+    <ng-container matColumnDef="id">
+      <mat-header-row *matHeaderRowDef> EmployeeID </mat-header-row>
+      <mat-row *matRowDef="let element"> {{element.id}} </mat-row>
+    </ng-container>
+  
+    name Column
+    <ng-container matColumnDef="name">
+      <mat-header-row *matHeaderRowDef> EmployeeName </mat-header-row>
+      <mat-row *matRowDef="let element"> {{element.name}} </mat-row>
+    </ng-container>
+  
+     address Column
+    <ng-container matColumnDef="address">
+      <mat-header-row *matHeaderRowDef>Address </mat-header-row>
+      <mat-row *matRowDef="let element"> {{element.address}} </mat-row>
+    </ng-container>
+  
+    columnsToDisplay = ['id','name', 'address'];<tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+    </mat-table>  -->
+
 
  
   
@@ -47,6 +86,5 @@
           <td>{{c.address}}</td>
         </tr>
       
-      </table>
-      
+      </table> 
      
